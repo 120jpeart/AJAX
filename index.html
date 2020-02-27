@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ayy lmao</title>
+  </head>
+  <body>
+    <div id="demo">
+      <h1>Weather</h1>
+      <h2>The weather today is...</h2>
+      <h3>??</h3>
+      <button type="button" onClick="loadDoc()">Change Content</button>
+      </div>
+
+      <script>
+        function loadDoc() {
+          var req = new XMLHttpRequest();
+          req.onreadystatechange = function(){
+            if(this.readysatechange == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML = this.responseText;
+            }
+          }
+          req.open("GET","weather.txt",true);
+          req.send();
+        }
+      </script>
+
+  </body>
+
+</html>
